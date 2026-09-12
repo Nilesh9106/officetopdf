@@ -3,3 +3,11 @@ dist/
 coverage/
 *.log
 .DS_Store
+
+npm/wasm/office2pdf.js
+npm/wasm/office2pdf_bg.wasm
+npm/*/office2pdf
+npm/*/office2pdf.exe
+.local/
+npm/*/package.json
+npm/*/README.md

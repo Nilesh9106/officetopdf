@@ -32,8 +32,26 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Resolve upstream office2pdf version
+        run: echo "OFFICE2PDF_VERSION=$(bun scripts/upstream-version.ts)" >> "$GITHUB_ENV"
+
+      - name: Install wasm-pack
+        uses: jetli/wasm-pack-action@v0.4.0
+
+      - name: Build WebAssembly bundle
+        run: bun run wasm:build
+
+      - name: Fetch upstream binaries
+        run: bun run binaries:fetch
+
       - name: Run checks
         run: bun run ci:check
+
+      - name: Publish platform packages
+        run: |
+          for dir in npm/*/; do
+            npm publish "$dir" --access public --provenance
+          done
 
       - name: Publish package
         run: npm publish --access public --provenance

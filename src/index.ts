@@ -1,1 +1,1 @@
-export { OfficeToPdfError } from "./errors/OfficeToPdfError.js";
+export * from "./node.js";
