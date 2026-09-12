@@ -1,0 +1,54 @@
+{
+  "name": "officetopdf",
+  "version": "0.0.1",
+  "description": "TypeScript package.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nilesh9106/officetopdf.git"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.14",
+    "@types/bun": "latest",
+    "@types/node": "^25.6.0",
+    "tsup": "^8.5.0",
+    "typescript": "^6.0.3"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/Nilesh9106/officetopdf/issues"
+  },
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.1.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/Nilesh9106/officetopdf#readme",
+  "keywords": [],
+  "license": "MIT",
+  "scripts": {
+    "build": "bunx --bun tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "bun test",
+    "typecheck": "bunx --bun tsc --noEmit",
+    "lint": "bunx --bun @biomejs/biome check .",
+    "lint:fix": "bunx --bun @biomejs/biome check --write .",
+    "format": "bunx --bun @biomejs/biome format --write .",
+    "clean": "rm -rf dist",
+    "ci:check": "bun run lint && bun run typecheck && bun run test && bun run build",
+    "prepublishOnly": "bun run ci:check",
+    "publish:npm": "npm publish --access public"
+  },
+  "sideEffects": false
+}
