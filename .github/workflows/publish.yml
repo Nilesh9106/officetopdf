@@ -5,6 +5,11 @@ on:
     tags:
       - "v*.*.*"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Build and validate everything without publishing"
+        type: boolean
+        default: true
 
 permissions:
   id-token: write
@@ -48,10 +53,17 @@ jobs:
         run: bun run ci:check
 
       - name: Publish platform packages
+        env:
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
         run: |
+          set -euo pipefail
           for dir in npm/*/; do
-            npm publish "$dir" --access public --provenance
+            echo "::group::publish $dir"
+            npm publish "$dir" --access public --provenance $DRY_RUN
+            echo "::endgroup::"
           done
 
       - name: Publish package
-        run: npm publish --access public --provenance
+        env:
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: npm publish --access public --provenance $DRY_RUN
