@@ -31,7 +31,6 @@ export interface ConvertOptions {
 export interface ConverterOptions {
   fonts?: ConvertInput[];
   fontPaths?: string[];
-  lastResortFontFamily?: string;
   binaryPath?: string;
   timeoutMs?: number;
 }

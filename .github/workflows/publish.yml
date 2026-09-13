@@ -40,12 +40,6 @@ jobs:
       - name: Resolve upstream office2pdf version
         run: echo "OFFICE2PDF_VERSION=$(bun scripts/upstream-version.ts)" >> "$GITHUB_ENV"
 
-      - name: Install wasm-pack
-        uses: jetli/wasm-pack-action@v0.4.0
-
-      - name: Build WebAssembly bundle
-        run: bun run wasm:build
-
       - name: Fetch upstream binaries
         run: bun run binaries:fetch
 

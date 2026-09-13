@@ -1,7 +1,7 @@
 {
   "name": "officetopdf-js",
   "version": "0.0.1",
-  "description": "Convert DOCX, PPTX and XLSX to PDF in Node.js, Bun and the browser. No LibreOffice, no Chromium.",
+  "description": "Convert DOCX, PPTX and XLSX to PDF in Node.js and Bun. No LibreOffice, no Chromium, no Docker.",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -18,25 +18,10 @@
   },
   "exports": {
     ".": {
-      "browser": {
-        "types": "./dist/browser.d.ts",
-        "import": "./dist/browser.js",
-        "require": "./dist/browser.cjs"
-      },
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs",
       "default": "./dist/index.js"
-    },
-    "./browser": {
-      "types": "./dist/browser.d.ts",
-      "import": "./dist/browser.js",
-      "require": "./dist/browser.cjs"
-    },
-    "./node": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
@@ -60,7 +45,6 @@
     "pdf",
     "office",
     "convert",
-    "wasm",
     "typst"
   ],
   "license": "Apache-2.0",
@@ -75,11 +59,9 @@
     "ci:check": "bun run lint && bun run typecheck && bun run test && bun run build",
     "prepublishOnly": "bun run ci:check",
     "publish:npm": "npm publish --access public",
-    "binaries:fetch": "bun run scripts/fetch-binaries.ts",
-    "wasm:build": "bash scripts/build-wasm.sh"
+    "binaries:fetch": "bun run scripts/fetch-binaries.ts"
   },
   "sideEffects": false,
-  "browser": "./dist/browser.js",
   "optionalDependencies": {
     "officetopdf-darwin-arm64": "0.0.1",
     "officetopdf-darwin-x64": "0.0.1",
@@ -87,13 +69,5 @@
     "officetopdf-linux-x64": "0.0.1",
     "officetopdf-linux-x64-musl": "0.0.1",
     "officetopdf-windows-x64": "0.0.1"
-  },
-  "peerDependencies": {
-    "officetopdf-wasm": "0.0.1"
-  },
-  "peerDependenciesMeta": {
-    "officetopdf-wasm": {
-      "optional": true
-    }
   }
 }
