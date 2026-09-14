@@ -44,16 +44,10 @@ await writeVersion("package.json", (pkg) => {
   }
 });
 
-for (const dir of PLATFORM_DIRS) {
-  await writeVersion(`npm/${dir}/package.json`, (pkg) => {
-    pkg.version = version;
-  });
-}
-
 await $`bun run format`;
 await $`bun run ci:check`;
 
-await $`git add package.json npm/*/package.json`;
+await $`git add package.json`;
 await $`git commit -m ${`chore(release): ${version}`}`;
 await $`git push origin main`;
 await $`git tag -a v${version} -m ${`v${version}`}`;
