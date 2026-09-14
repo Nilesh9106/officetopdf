@@ -59,7 +59,8 @@
     "ci:check": "bun run lint && bun run typecheck && bun run test && bun run build",
     "prepublishOnly": "bun run ci:check",
     "publish:npm": "npm publish --access public",
-    "binaries:fetch": "bun run scripts/fetch-binaries.ts"
+    "binaries:fetch": "bun run scripts/fetch-binaries.ts",
+    "release": "bun run scripts/release.ts"
   },
   "sideEffects": false,
   "optionalDependencies": {
