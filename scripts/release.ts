@@ -1,14 +1,5 @@
 import { $ } from "bun";
 
-const PLATFORM_DIRS = [
-  "darwin-arm64",
-  "darwin-x64",
-  "linux-arm64",
-  "linux-x64",
-  "linux-x64-musl",
-  "win32-x64",
-];
-
 const version = prompt("Version to release (e.g. 0.1.0):")?.trim();
 if (!version || !/^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$/.test(version)) {
   console.error("Invalid version.");
