@@ -1,6 +1,6 @@
 {
   "name": "officetopdf-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert DOCX, PPTX and XLSX to PDF in Node.js and Bun. No LibreOffice, no Chromium, no Docker.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -64,11 +64,11 @@
   },
   "sideEffects": false,
   "optionalDependencies": {
-    "officetopdf-darwin-arm64": "0.0.2",
-    "officetopdf-darwin-x64": "0.0.2",
-    "officetopdf-linux-arm64": "0.0.2",
-    "officetopdf-linux-x64": "0.0.2",
-    "officetopdf-linux-x64-musl": "0.0.2",
-    "officetopdf-windows-x64": "0.0.2"
+    "officetopdf-darwin-arm64": "0.1.1",
+    "officetopdf-darwin-x64": "0.1.1",
+    "officetopdf-linux-arm64": "0.1.1",
+    "officetopdf-linux-x64": "0.1.1",
+    "officetopdf-linux-x64-musl": "0.1.1",
+    "officetopdf-windows-x64": "0.1.1"
   }
 }
