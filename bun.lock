@@ -11,12 +11,12 @@
         "typescript": "^7.0.2",
       },
       "optionalDependencies": {
-        "officetopdf-darwin-arm64": "0.0.2",
-        "officetopdf-darwin-x64": "0.0.2",
-        "officetopdf-linux-arm64": "0.0.2",
-        "officetopdf-linux-x64": "0.0.2",
-        "officetopdf-linux-x64-musl": "0.0.2",
-        "officetopdf-windows-x64": "0.0.2",
+        "officetopdf-darwin-arm64": "0.1.1",
+        "officetopdf-darwin-x64": "0.1.1",
+        "officetopdf-linux-arm64": "0.1.1",
+        "officetopdf-linux-x64": "0.1.1",
+        "officetopdf-linux-x64-musl": "0.1.1",
+        "officetopdf-windows-x64": "0.1.1",
       },
     },
   },
@@ -242,6 +242,16 @@
     "mz": ["mz@2.7.0", "", { "dependencies": { "any-promise": "^1.0.0", "object-assign": "^4.0.1", "thenify-all": "^1.0.0" } }, "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q=="],
 
     "object-assign": ["object-assign@4.1.1", "", {}, "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="],
+
+    "officetopdf-darwin-arm64": ["officetopdf-darwin-arm64@0.1.1", "", { "os": "darwin", "cpu": "arm64" }, "sha512-B9+cbPQSC/DJxPSS1NkCA+OLEW42KzU91Pfwpk1uaWmCZ9WLHKGE8zTXHtSrJHY0l9KJInpWkPI5sb3rXJRzUA=="],
+
+    "officetopdf-darwin-x64": ["officetopdf-darwin-x64@0.1.1", "", { "os": "darwin", "cpu": "x64" }, "sha512-wJQ2CnwXeT2EHBHl1BTA1RuNVMAlET9yoRDrsI1nKRGqrE/Ovc/f03a3Ehk4m9F2msNUobKR7dJ6E+dGyBQwww=="],
+
+    "officetopdf-linux-arm64": ["officetopdf-linux-arm64@0.1.1", "", { "os": "linux", "cpu": "arm64" }, "sha512-ZZJL5R4RymhMepkB4krgHOk7kOAnVSxgBWKh/CpiZ3aJ/lc+hnxQ12jDBYgKGU59IronSHqMyECHmJHnDGHj6w=="],
+
+    "officetopdf-linux-x64-musl": ["officetopdf-linux-x64-musl@0.1.1", "", { "os": "linux", "cpu": "x64" }, "sha512-jHsVAueNGKEM0+qYNws6y8jBC/I/q5IIP1yAejJMo9xVj6wJJclonvhs7d1Xbxk+2Pi1daXnlMCN+op0wyHjHQ=="],
+
+    "officetopdf-windows-x64": ["officetopdf-windows-x64@0.1.1", "", { "os": "win32", "cpu": "x64" }, "sha512-TkQdxizNV1d+nJCd8bO03lZHTpY7v628nRagTWDsaXurUfE2FIPwkap6el0kP1KCjvnWajSgZ9MQQLIqHMt6aA=="],
 
     "pathe": ["pathe@2.0.3", "", {}, "sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w=="],
 
