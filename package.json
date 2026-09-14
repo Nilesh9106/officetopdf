@@ -1,6 +1,6 @@
 {
   "name": "officetopdf-js",
-  "version": "0.7.0",
+  "version": "0.1.0",
   "description": "Convert DOCX, PPTX and XLSX to PDF in Node.js and Bun. No LibreOffice, no Chromium, no Docker.",
   "type": "module",
   "main": "./dist/index.cjs",
