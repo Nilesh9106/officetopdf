@@ -35,7 +35,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Install dependencies
-        run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Resolve upstream office2pdf version
         run: echo "OFFICE2PDF_VERSION=$(bun scripts/upstream-version.ts)" >> "$GITHUB_ENV"
