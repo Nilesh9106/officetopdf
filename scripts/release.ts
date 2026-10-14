@@ -16,24 +16,9 @@ if ((await $`git tag -l v${version}`.text()).trim()) {
   process.exit(1);
 }
 
-type Manifest = {
-  version: string;
-  optionalDependencies?: Record<string, string>;
-};
-
-async function writeVersion(path: string, mutate: (pkg: Manifest) => void) {
-  const pkg: Manifest = await Bun.file(path).json();
-  mutate(pkg);
-  await Bun.write(path, `${JSON.stringify(pkg, null, 2)}\n`);
-}
-
-await writeVersion("package.json", (pkg) => {
-  pkg.version = version;
-  for (const name of Object.keys(pkg.optionalDependencies ?? {})) {
-    // biome-ignore lint/style/noNonNullAssertion: guarded by the loop source
-    pkg.optionalDependencies![name] = version;
-  }
-});
+const pkg = await Bun.file("package.json").json();
+pkg.version = version;
+await Bun.write("package.json", `${JSON.stringify(pkg, null, 2)}\n`);
 
 await $`bun run format`;
 await $`bun run ci:check`;
