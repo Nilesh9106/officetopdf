@@ -75,7 +75,9 @@ await converter.dispose();
 
 `pdfUa` enforces the full PDF/UA-1 standard and fails the conversion when the source cannot satisfy it — a document with no title raises `ConversionFailedError: PDF/UA-1 error: missing document title`. Use `tagged` when you want screen-reader structure without the strict compliance gate.
 | `sheets` | `string[]` | XLSX sheet filter; the only way to print a hidden sheet. |
-| `slides` | `string` | PPTX slide range, e.g. `"1-5"`. |
+| `slides` | `string` | PPTX slide range by original source position, e.g. `"1-5"`. |
+| `includeHiddenSlides` | `boolean` | Include PPTX slides marked hidden; omitted by default. |
+| `xlsxUiScript` | `"hangul" \| "latin"` | Excel UI script whose output XLSX reproduces; picks the theme font for scheme fonts. Default `"hangul"`. |
 | `signal` | `AbortSignal` | Cancel an in-flight conversion. |
 | `onWarning` | `(warning: ConversionWarning) => void` | Non-fatal diagnostics, e.g. a missing font falling back. |
 

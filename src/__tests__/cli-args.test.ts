@@ -11,11 +11,15 @@ describe("buildArgs", () => {
   });
 
   test("omits every flag that was not requested", () => {
-    expect(args({ landscape: false, pdfA: false, sheets: [], slides: "" })).toEqual([
-      "in.docx",
-      "--output",
-      "out.pdf",
-    ]);
+    expect(
+      args({
+        landscape: false,
+        pdfA: false,
+        sheets: [],
+        slides: "",
+        includeHiddenSlides: false,
+      }),
+    ).toEqual(["in.docx", "--output", "out.pdf"]);
   });
 
   test("maps each option to its CLI flag", () => {
@@ -28,6 +32,8 @@ describe("buildArgs", () => {
         pdfUa: true,
         sheets: ["Sheet1", "Summary"],
         slides: "1-5",
+        includeHiddenSlides: true,
+        xlsxUiScript: "latin",
       }),
     ).toEqual([
       "in.docx",
@@ -43,6 +49,9 @@ describe("buildArgs", () => {
       "Sheet1,Summary",
       "--slides",
       "1-5",
+      "--include-hidden-slides",
+      "--xlsx-ui-script",
+      "latin",
     ]);
   });
 

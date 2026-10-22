@@ -121,4 +121,5 @@ export type {
   ConvertOptions,
   OfficeFormat,
   PaperSize,
+  XlsxUiScript,
 } from "./types.js";

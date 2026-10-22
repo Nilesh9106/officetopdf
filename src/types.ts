@@ -2,6 +2,8 @@ export type OfficeFormat = "docx" | "pptx" | "xlsx";
 
 export type PaperSize = "a4" | "letter" | "legal";
 
+export type XlsxUiScript = "hangul" | "latin";
+
 export type ConvertInput = Uint8Array | ArrayBuffer | Blob;
 
 export interface ConversionWarning {
@@ -24,6 +26,8 @@ export interface ConvertOptions {
   pdfUa?: boolean;
   sheets?: string[];
   slides?: string;
+  includeHiddenSlides?: boolean;
+  xlsxUiScript?: XlsxUiScript;
   signal?: AbortSignal;
   onWarning?: (warning: ConversionWarning) => void;
 }

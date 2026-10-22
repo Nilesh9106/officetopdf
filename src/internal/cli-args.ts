@@ -15,6 +15,8 @@ export function buildArgs(
   if (options.pdfUa) args.push("--pdf-ua");
   if (options.sheets?.length) args.push("--sheets", options.sheets.join(","));
   if (options.slides) args.push("--slides", options.slides);
+  if (options.includeHiddenSlides) args.push("--include-hidden-slides");
+  if (options.xlsxUiScript) args.push("--xlsx-ui-script", options.xlsxUiScript);
   for (const fontPath of fontPaths) args.push("--font-path", fontPath);
 
   return args;
